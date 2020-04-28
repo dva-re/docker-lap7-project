@@ -31,6 +31,10 @@ if [ ! -d /data/apache_logs ]; then
     mkdir /data/apache_logs
 fi
 
+if [ -d /etc/apache2/sites-enabled ]; then
+    rm -rf /etc/apache2-orig/sites-enabled/*
+fi
+
 if [ ! -s /etc/apache2/magic ]; then
     cp -r /etc/apache2-orig/* /etc/apache2/
 fi
