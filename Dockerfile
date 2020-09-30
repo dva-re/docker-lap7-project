@@ -4,7 +4,7 @@ MAINTAINER fastsol
 ADD start.sh /root/start.sh
 
 RUN apt-get update && \
-apt-get install apache2 wget git-core curl locales locales-all openssl openssh-server nano cron apt-transport-https lsb-release ca-certificates pbzip2 libzip4 unzip ghostscript poppler-utils -y --allow-unauthenticated && \
+apt-get install apache2 wget git-core curl locales locales-all openssl openssh-server nano cron apt-transport-https lsb-release ca-certificates pbzip2 libzip4 unzip ghostscript poppler-utils ffmpeg -y --allow-unauthenticated && \
 systemctl enable apache2 && \
 echo "SetEnv PROJECT_RUN_MODE production" >> /etc/apache2/apache2.conf && \
 echo "PROJECT_RUN_MODE=production" >> /etc/environment && \
