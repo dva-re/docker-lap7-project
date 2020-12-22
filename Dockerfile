@@ -27,6 +27,7 @@ sed -i 's|^short_open_tag.*|short_open_tag = On|' /etc/php/7.4/cli/php.ini && \
 sed -i 's|^;error_log.*|error_log = /var/log/php_cli_errors.log|' /etc/php/7.4/cli/php.ini && \
 sed -i 's|^error_reporting.*|error_reporting = E_ALL \& ~E_DEPRECATED \& ~E_NOTICE \& ~E_STRICT|' /etc/php/7.4/cli/php.ini && \
 sed -i 's|^;date.timezone.*|date.timezone = Europe/Moscow|' /etc/php/7.4/cli/php.ini && \
+sed -i 's|.*coder.*PDF.*|<!-- & -->|' /etc/ImageMagick-6/policy.xml && \
 echo "apc.shm_size=64M" >> /etc/php/7.4/mods-available/apcu.ini && \
 ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && echo "Europe/Moscow" > /etc/timezone && \
 echo -e 'LANG="ru_RU.UTF-8"\nLANGUAGE="ru_RU.UTF-8"\n' > /etc/default/locale && sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && dpkg-reconfigure --frontend=noninteractive locales && \
